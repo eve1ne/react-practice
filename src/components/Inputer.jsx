@@ -14,6 +14,13 @@ export default function Inputer() {
 
         // Adds the new ingredient to the end of the list after the last previous ingredient that was added
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+
+        let showIngredients = false
+        if (ingredients.length === 0) {
+            showIngredients = false
+        } else {
+            showIngredients = true
+        }
     }
 
     return(
@@ -29,9 +36,20 @@ export default function Inputer() {
                     + Add Ingredient
                 </button>
             </form>
-            <ul>
-                {ingredientsListItems}
-            </ul>
+            <section>
+                <div className="ingredients-list">
+                    <h2>Ingredients on hand:</h2>
+                    <ul>
+                        {ingredientsListItems}
+                    </ul>
+                </div>
+                <div className="recipe-generator">
+                    <h3>Ready for a recipe?</h3>
+                    <p>Generate a recipe from your list of ingredients.</p>
+                    <button>Get a recipe</button>
+                </div>
+
+            </section>
         </>
     )
 }

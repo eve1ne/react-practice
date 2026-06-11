@@ -55,4 +55,58 @@ header > h1 {
     font-weight: 500;
 }
 
+.ingredients-list {
+    width: 100%;
+    min-width: 150px;
+    max-width: 500px;
+    justify-self: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.ingredients-list > h2 {
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.ingredients-list > ul {
+    color: #475467;
+    line-height: 28px;
+}
+
+.recipe-generator {
+    width: 100%;
+    min-width: 150px;
+    max-width: 500px;
+    justify-self: center;
+    background-color: #F0EFEB;
+    padding: 6px 12px 18px 12px;
+    border-radius: 8px;
+}
+
+.recipe-generator > button {
+    border: none;
+    border-radius: 6px;
+    background: #D17557;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: #FAFAF8;
+    padding: 9px 17px;
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.recipe-generator > p {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 20px;
+}
+
+.recipe-generator > h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 24px;
+}
+
 
