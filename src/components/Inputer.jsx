@@ -1,5 +1,6 @@
 import '../index.css'
 import { useState } from "react"
+import Recipe from "./Recipe"
 
 export default function Inputer() {
     const [ingredients, setIngredients] = useState([])
@@ -14,6 +15,11 @@ export default function Inputer() {
 
         // Adds the new ingredient to the end of the list after the last previous ingredient that was added
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+    }
+
+    const [recipeShown, setRecipeShown] = useState(false)
+    function toggleRecipeShown() {
+        setRecipeShown(prevShown => !prevShown)
     }
 
     return(
@@ -39,9 +45,9 @@ export default function Inputer() {
                 <div className="recipe-generator" {...ingredients.length < 4 && { className: "hide-ingredients" }}>
                     <h3>Ready for a recipe?</h3>
                     <p>Generate a recipe from your list of ingredients.</p>
-                    <button>Get a recipe</button>
+                    <button onClick={toggleRecipeShown}>Get a recipe</button>
                 </div>
-
+                {recipeShown && <Recipe />}
             </section>
         </>
     )
