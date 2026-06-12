@@ -1,6 +1,6 @@
 import '../index.css'
 import { useState } from "react"
-import Recipe from "./Recipe"
+import IngredientsList from "./IngredientsList"
 
 export default function Inputer() {
     const [ingredients, setIngredients] = useState([])
@@ -17,11 +17,6 @@ export default function Inputer() {
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
-    const [recipeShown, setRecipeShown] = useState(false)
-    function toggleRecipeShown() {
-        setRecipeShown(prevShown => !prevShown)
-    }
-
     return(
         <>
             <form action={handleSubmit} className="add-ingredient-form">
@@ -35,20 +30,7 @@ export default function Inputer() {
                     + Add Ingredient
                 </button>
             </form>
-            <section {...ingredients.length === 0 && { className: "hide-ingredients" }}>
-                <div className="ingredients-list">
-                    <h2>Ingredients on hand:</h2>
-                    <ul>
-                        {ingredientsListItems}
-                    </ul>
-                </div>
-                <div className="recipe-generator" {...ingredients.length < 4 && { className: "hide-ingredients" }}>
-                    <h3>Ready for a recipe?</h3>
-                    <p>Generate a recipe from your list of ingredients.</p>
-                    <button onClick={toggleRecipeShown}>Get a recipe</button>
-                </div>
-                {recipeShown && <Recipe />}
-            </section>
+            <IngredientsList ingredients={ingredients} listItems={ingredientsListItems}/>
         </>
     )
 }
