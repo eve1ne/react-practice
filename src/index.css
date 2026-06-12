@@ -109,4 +109,8 @@ header > h1 {
     line-height: 24px;
 }
 
+.hide-ingredients {
+    display: none;
+}
+
 
