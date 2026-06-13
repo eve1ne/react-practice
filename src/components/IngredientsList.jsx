@@ -1,11 +1,14 @@
 import { useState } from "react"
 import Recipe from "./Recipe"
+import { getRecipeFromMistral } from "../ai"
 
 export default function IngredientsList(props) {
 
-    const [recipeShown, setRecipeShown] = useState(false)
-    function toggleRecipeShown() {
-        setRecipeShown(prevShown => !prevShown)
+    const [HFRecipe, setHFRecipe] = useState("")
+
+    async function handleHFRecipe() {
+        const generatedRecipeMarkdown = await getRecipeFromMistral(props.ingredients)
+        setHFRecipe(generatedRecipeMarkdown)
     }
 
     return (
@@ -23,9 +26,9 @@ export default function IngredientsList(props) {
             >
                 <h3>Ready for a recipe?</h3>
                 <p>Generate a recipe from your list of ingredients.</p>
-                <button onClick={toggleRecipeShown}>Get a recipe</button>
+                <button onClick={handleHFRecipe}>Get a recipe</button>
             </div>
-            {recipeShown && <Recipe />}
+            {HFRecipe && <Recipe recipe={HFRecipe} />}
         </section>
     )
 }
