@@ -1,13 +1,25 @@
-import { useState } from "react"
 import Recipe from "./Recipe"
 import { getRecipeFromMistral } from "../ai"
+import { useState, useEffect, useRef } from "react"
 
 export default function IngredientsList(props) {
-
     const [HFRecipe, setHFRecipe] = useState("")
+    const targetSectionRef = useRef(null)
+
+    // Hooks must be top level
+    useEffect(() => {
+        if (HFRecipe && targetSectionRef.current) {
+            targetSectionRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            })
+        }
+    }, [HFRecipe])
 
     async function handleHFRecipe() {
-        const generatedRecipeMarkdown = await getRecipeFromMistral(props.ingredients)
+        const generatedRecipeMarkdown =
+            await getRecipeFromMistral(props.ingredients)
+
         setHFRecipe(generatedRecipeMarkdown)
     }
 
@@ -28,7 +40,9 @@ export default function IngredientsList(props) {
                 <p>Generate a recipe from your list of ingredients.</p>
                 <button onClick={handleHFRecipe}>Get a recipe</button>
             </div>
-            {HFRecipe && <Recipe recipe={HFRecipe} />}
+            <div ref={targetSectionRef}>
+                {HFRecipe && <Recipe recipe={HFRecipe} />}
+            </div>
         </section>
     )
 }
