@@ -1,16 +1,63 @@
-# React + Vite
+# AI Chef
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that generates recipe suggestions based on ingredients entered by the user.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Add ingredients to a list
+* View all ingredients currently on hand
+* Generate recipe recommendations using AI
+* Render recipe responses in a clean, readable format
+* Automatically scroll to the generated recipe
 
-## React Compiler
+## Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* Vite
+* JavaScript
+* Hugging Face Inference API
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Enter ingredients you have available.
+2. Once at least four ingredients are added, a recipe generator becomes available.
+3. Click **Get a Recipe**.
+4. The app sends the ingredient list to an AI model through the Hugging Face API.
+5. A recipe suggestion is generated and displayed on the page.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone git@github.com:eve1ne/ai-recipe-generator.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file in the project root:
+
+```env
+VITE_HF_ACCESS_TOKEN=your_hugging_face_token
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Learning Goals
+
+This project was built to practice:
+
+* React state management with hooks
+* Component composition and props
+* Conditional rendering
+* Working with APIs
+* Handling asynchronous JavaScript with `async/await`
+* Using environment variables to secure API keys
