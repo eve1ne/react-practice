@@ -1,4 +1,4 @@
-import logo from '../assets/ChefClaudeIcon.svg'
+import logo from '../assets/Chef-Toque-Hat--Streamline-Plump.svg'
 import '../index.css'
 
 export default function Header() {
