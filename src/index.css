@@ -27,10 +27,17 @@ header > h1 {
     font-weight: 400;
 }
 
+h3 {
+    margin-top: 5%;
+    font-weight: 500;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+}
+
 .add-ingredient-form {
     display: flex;
     justify-content: center;
-    padding-top: 5%;
     gap: 12px
 }
 
@@ -41,7 +48,7 @@ header > h1 {
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     flex-grow: 1;
     min-width: 150px;
-    max-width: 400px;
+    max-width: 350px;
 }
 
 .add-ingredient-form > button {
@@ -53,6 +60,18 @@ header > h1 {
     width: 150px;
     font-size: 0.875rem;
     font-weight: 500;
+    cursor: pointer;
+}
+
+.add-ingredient-form > button:hover {
+    background-color: rgba(33, 33, 31, 0.85);
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.add-ingredient-form > button:active {
+    transform: translateY(1px);
+    box-shadow: none;
 }
 
 .ingredients-list {
@@ -60,8 +79,8 @@ header > h1 {
     min-width: 150px;
     max-width: 500px;
     justify-self: center;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .ingredients-list > h2 {
@@ -80,15 +99,18 @@ header > h1 {
     min-width: 150px;
     max-width: 500px;
     justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 6%;
     background-color: #F0EFEB;
-    padding: 6px 12px 18px 12px;
+    padding: 0% 2%;
     border-radius: 8px;
 }
 
 .recipe-generator > button {
     border: none;
     border-radius: 6px;
-    background: #D17557;
+    background: #864783;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     color: #FAFAF8;
     padding: 9px 17px;
@@ -97,13 +119,24 @@ header > h1 {
     cursor: pointer;
 }
 
-.recipe-generator > p {
+.recipe-generator > button:hover {
+    background: #653862;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-generator > button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.recipe-generator > span > p {
     color: #6B7280;
     font-size: 0.875rem;
     line-height: 20px;
 }
 
-.recipe-generator > h3 {
+.recipe-generator > span > h2 {
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 24px;
@@ -124,3 +157,11 @@ header > h1 {
     font-size: 1.125rem;
     font-weight: 400;
 }
+
+.generated-recipe > h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 12px;
+}
+

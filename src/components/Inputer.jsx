@@ -19,6 +19,7 @@ export default function Inputer() {
 
     return(
         <>
+            <h3>Send me any ingredients you have! I'll suggest some recipes.</h3>
             <form action={handleSubmit} className="add-ingredient-form">
                 <input  
                     type="text"
