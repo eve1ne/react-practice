@@ -25,6 +25,9 @@ A React application that generates recipe suggestions based on ingredients enter
 4. The app sends the ingredient list to an AI model through the Hugging Face API.
 5. A recipe suggestion is generated and displayed on the page.
 
+![Screenshot of the recipe page](src/assets/recipe-pic.png)
+![Screenshot of the generated recipe](src/assets/generated-pic.png)
+
 ## Installation
 
 Clone the repository:
